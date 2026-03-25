@@ -14,15 +14,30 @@ html {
 /* Header */
 .header {
   display: flex;
+  animation: faceDown 0.5s ease;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
   background-color: #ffffff;
+  backdrop-filter: blur(12px);
   box-shadow: 0 12px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
   flex-wrap: nowrap; /* Allows wrapping on small screens */
+}
+
+@keyframes faceDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .logo {
@@ -30,6 +45,91 @@ html {
   max-width: 100%;
   border-radius: 12px;
   cursor: pointer;
+}
+
+.cta {
+  position: relative;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: #ffffff;
+
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
+}
+
+/* subtle glow edge (very pro touch) */
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 60%);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* hover = lift, not “bounce” */
+.cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+}
+
+/* click feedback */
+.cta:active {
+  transform: translateY(0px);
+  box-shadow: 0 6px 15px rgba(15, 23, 42, 0.18);
+}
+
+.cta span {
+  transition: transform 0.2s ease;
+}
+
+.cta:hover span {
+  transform: translateX(3px);
+}
+
+.marquee {
+  flex: 1;
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+.track span {
+  white-space: nowrap;
+  margin-right: 50px;
+  font-weight: 400;
+  color: #af4f4f;
+  font-size: 0.9rem;
+}
+
+/* smoother + no jump */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
 }
 
 .menu {
@@ -45,6 +145,7 @@ html {
 
 .menu a {
   display: inline-block;
+  position: relative;
   margin: 0.5rem 1rem;
   text-decoration: none;
   color: #333;
@@ -56,6 +157,17 @@ html {
 .menu a:hover {
   color: #3b82f6;
   transform: translateX(3px);
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #3b82f6;
+  transition: width 0.3s ease;
 }
 
 /* Hamburger button hidden on desktop */
@@ -90,15 +202,25 @@ h3 {
     font-size: 1.2rem;
   }
 
+  .right {
+    gap: 1rem;
+  }
+
+  /* .cta {
+    display: none;
+  } */
+
   .menu {
     display: none; /* hide menu by default on small screens */
     flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.4rem;
     position: absolute;
     top: 70px; /* adjust according to header height */
     right: 10px;
     background-color: rgba(255, 255, 255, 0.95);
     width: 200px;
-    padding: 1rem;
+    padding: 0.5rem;
     backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -118,11 +240,12 @@ h3 {
   }
 
   .menu a {
-    margin: 0.7rem 0;
+    margin: 0;
     text-decoration: none;
     color: #333;
     font-weight: 500;
     transition: 0.3s;
+    padding: 0.4rem 0;
   }
 
   .menu a:hover {

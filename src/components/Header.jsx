@@ -25,6 +25,17 @@ function Header() {
     <header className="header" ref={wrapperRef}>
       <img src={logo} alt="Logo" className="logo" />
 
+      <div className="marquee">
+  <div className="track">
+    <span>
+      Reliable Logistics, Real Results
+    </span>
+    <span>
+      Welcome to Kakos Development Ltd for the best logistics services
+    </span>
+  </div>
+</div>
+
       {/* Hamburger icon */}
       <div className="hamburger" onClick={handleHamburgerClick}>
         &#9776;
@@ -35,9 +46,6 @@ function Header() {
         <a href="#home" onClick={() => setMenuOpen(false)}>
           Home
         </a>
-        <a href="#about" onClick={() => setMenuOpen(false)}>
-          About
-        </a>
         <a href="#services" onClick={() => setMenuOpen(false)}>
           Services
         </a>
@@ -47,6 +55,9 @@ function Header() {
         <a href="#contact" onClick={() => setMenuOpen(false)}>
           Contact
         </a>
+        <button className="cta">
+  Get a Quote <span>→</span>
+</button>
       </nav>
     </header>
   );
