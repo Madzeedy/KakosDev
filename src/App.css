@@ -20,7 +20,7 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
   backdrop-filter: blur(12px);
   box-shadow: 0 12px 5px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -29,7 +29,6 @@ html {
   top: 0;
   z-index: 1000;
   flex-wrap: nowrap; /* Allows wrapping on small screens */
-  
 }
 
 @keyframes faceDown {
@@ -50,8 +49,7 @@ html {
   cursor: pointer;
 }
 
-* Logo + Company Name + Tagline container */
-.logo-container {
+* Logo + Company Name + Tagline container */ .logo-container {
   display: flex;
   align-items: center;
   gap: 6px; /* space between logo and text */
@@ -65,7 +63,7 @@ html {
 
 .company-name {
   font-weight: 700; /* bold, professional */
-  font-size: 1.1rem; 
+  font-size: 1.1rem;
   color: #0f172a; /* dark corporate color */
   letter-spacing: 0.5px;
   white-space: nowrap;
@@ -109,7 +107,11 @@ html {
   position: absolute;
   inset: 0;
   border-radius: 999px;
-  background: radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 60%);
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.25),
+    transparent 60%
+  );
   opacity: 0.4;
   pointer-events: none;
 }
@@ -234,15 +236,86 @@ h3 {
   will-change: transform;
 }
 
-/* Dark transparent overlay for better readability */
+/* Overlay darker gradient like reference */
 .home .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25); /* subtle, won’t hide header shadow */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75) -55%,
+    rgba(0, 0, 0, 0.55) 15%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
   display: flex;
-  justify-content: center;
+  align-items: center;
   align-items: center;
   z-index: 2;
+}
+
+/* TOP LEFT LOGO */
+.hero-logo {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  height: 60px;
+  z-index: 1001;
+
+  transition: transform 0.3s ease;
+}
+
+/* CONTENT BLOCK */
+.home-content {
+  max-width: 700px;
+  margin-left: 8%;
+  color: #fff;
+  z-index: 3;
+}
+
+/* SMALL TOP TEXT */
+.home-subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: #d1d5db;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* BIG TITLE */
+.home-content h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* Highlight word (like yellow in reference) */
+.home-content h1 span {
+  color: #facc15;
+  font-weight: 500;
+}
+
+/* Paragraphs */
+.home-content p {
+  font-size: 1.05rem;
+  color: #e5e7eb;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+/* MINIMAL BUTTON (like reference) */
+.home-btn.minimal {
+  margin-top: 1.5rem;
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.home-btn.minimal:hover {
 }
 
 /* CTA Button */
@@ -253,21 +326,22 @@ h3 {
   color: #3b5998; /* match your logo header colors */
   background: #facc15; /* bright earthy accent */
   border: none;
-  max-width: 90%;      /* won’t overflow on small screens */
+  max-width: 90%; /* won’t overflow on small screens */
   font-size: clamp(0.9rem, 1.3vw, 1.3rem); /* scales smoothly */
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
   position: relative;
   z-index: 3;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 .home-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
-  background: #f59e0b; /* darker accent on hover */
 }
 
 .home-btn .arrow {
@@ -295,11 +369,11 @@ h3 {
 }
 
 .overlay {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
   backface-visibility: hidden; /* smooth rendering */
-  
 }
-
 
 @media (max-width: 1024px) {
   h1 {
@@ -323,12 +397,12 @@ h3 {
   }
 
   .header {
-  justify-content: flex-start; /* stop spreading items */
-}
+    justify-content: flex-start; /* stop spreading items */
+  }
 
-.hamburger {
-  margin-left: auto; /* pushes it to the right */
-}
+  .hamburger {
+    margin-left: auto; /* pushes it to the right */
+  }
 
   .logo-container {
     gap: 0; /* remove spacing between logo and text */
@@ -419,5 +493,4 @@ button {
     font-size: 0.9rem;
     padding: 0.6rem 1.2rem;
   }
-  
 }

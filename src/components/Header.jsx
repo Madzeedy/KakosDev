@@ -25,20 +25,18 @@ function Header() {
     <header className="header" ref={wrapperRef}>
       <img src={logo} alt="Logo" className="logo" />
       <div className="company-text">
-      <span className="company-name">Kakos Dev</span>
-      <span className="company-tagline">Shipping International</span>
-    </div>
+        <span className="company-name">Kakos Dev</span>
+        <span className="company-tagline">Shipping International</span>
+      </div>
 
       <div className="marquee">
-  <div className="track">
-    <span>
-      Reliable Logistics, Real Results
-    </span>
-    <span>
-      Welcome to Kakos Development Ltd for the best logistics services
-    </span>
-  </div>
-</div>
+        <div className="track">
+          <span>Reliable Logistics, Real Results</span>
+          <span>
+            Welcome to Kakos Development Ltd for the best logistics services
+          </span>
+        </div>
+      </div>
 
       {/* Hamburger icon */}
       <div className="hamburger" onClick={handleHamburgerClick}>
@@ -60,8 +58,8 @@ function Header() {
           Contact
         </a>
         <button className="cta">
-  Get a Quote <span>→</span>
-</button>
+          Get a Quote <span>→</span>
+        </button>
       </nav>
     </header>
   );
