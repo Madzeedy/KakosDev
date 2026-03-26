@@ -24,6 +24,10 @@ function Header() {
   return (
     <header className="header" ref={wrapperRef}>
       <img src={logo} alt="Logo" className="logo" />
+      <div className="company-text">
+      <span className="company-name">Kakos Dev</span>
+      <span className="company-tagline">Shipping International</span>
+    </div>
 
       <div className="marquee">
   <div className="track">
