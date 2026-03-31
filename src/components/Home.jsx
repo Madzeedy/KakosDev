@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import bgImage from "../assets/roadway.jpg";
 import bg1 from "../assets/roadway2.jpg";
 import bg2 from "../assets/roadway10.jpg";
-import bg3 from "../assets/roadway7.jpg";
+import bg3 from "../assets/roadway8.jpg";
+import bg4 from "../assets/roadway9.jpg";
 import logo from "../assets/K2.png"; // top left logo
 
-const backgrounds = [bgImage, bg1, bg2, bg3];
+const backgrounds = [bgImage, bg1, bg2, bg3, bg4];
 
 function Home() {
   const [currentBg, setCurrentBg] = useState(0);

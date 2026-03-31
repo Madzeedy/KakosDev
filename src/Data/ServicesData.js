@@ -6,19 +6,19 @@ export const services = [
   {
     title: "Reliable",
     highlight: "Services",
-    description: "...",
+    description: "Apa tunapashwa kutiya description ya iyi title yenye tumeandika, inapashwa kuwa realistic and marketing.",
     image: drilling,
   },
   {
     title: "Smart",
     highlight: "Logistics",
-    description: "...",
+    description: "Apa tunapashwa kutiya description ya iyi title yenye tumeandika, inapashwa kuwa realistic and marketing.",
     image: logistics,
   },
   {
     title: "Cargo",
     highlight: "Transport",
-    description: "...",
+    description: "Apa tunapashwa kutiya description ya iyi title yenye tumeandika, inapashwa kuwa realistic and marketing.",
     image: transport,
   },
 ];
