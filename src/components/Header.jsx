@@ -1,9 +1,9 @@
 import logo from "../assets/logo.png";
 import React, { useRef, useState, useEffect } from "react";
 
-function Header() {
+function Header({ setShowQuote }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const wrapperRef = useRef(null); // Wrap both hamburger + menu
+  const wrapperRef = useRef(null);
 
   const handleHamburgerClick = () => {
     setMenuOpen((prev) => !prev);
@@ -38,12 +38,10 @@ function Header() {
         </div>
       </div>
 
-      {/* Hamburger icon */}
       <div className="hamburger" onClick={handleHamburgerClick}>
         &#9776;
       </div>
 
-      {/* Menu */}
       <nav className={`menu ${menuOpen ? "active" : ""}`}>
         <a href="#home" onClick={() => setMenuOpen(false)}>
           Home
@@ -57,7 +55,13 @@ function Header() {
         <a href="#contact" onClick={() => setMenuOpen(false)}>
           Contact
         </a>
-        <button className="cta">
+        <button
+          className="cta"
+          onClick={() => {
+            setShowQuote(true);
+            setMenuOpen(false);
+          }}
+        >
           Get a Quote <span>→</span>
         </button>
       </nav>
