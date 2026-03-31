@@ -536,16 +536,22 @@ button {
 /* SERVICES SECTION */
 
 .services-section {
-  height: 100vh;
-  padding: 120px 8%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center; /* vertical centering */
+  justify-content: center; /* horizontal centering */
+  padding: 60px 8%;
   background: #f7f7f7;
+  box-sizing: border-box;
 }
 
 .services-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  gap: 40px 60px; /* vertical gap 40px, horizontal gap 60px */
+  align-items: center; /* aligns left and right vertically */
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .services-left {
