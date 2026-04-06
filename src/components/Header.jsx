@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import logo from "../assets/K.png";
 import React, { useRef, useState, useEffect } from "react";
 
 function Header({ setShowQuote }) {
@@ -25,7 +25,7 @@ function Header({ setShowQuote }) {
     <header className="header" ref={wrapperRef}>
       <img src={logo} alt="Logo" className="logo" />
       <div className="company-text">
-        <span className="company-name">Kakos Dev</span>
+        <span className="company-name">akos Dev</span>
         <span className="company-tagline">Shipping International</span>
       </div>
 
