@@ -1,4 +1,5 @@
 import React from "react";
+import { FaInstagram } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -20,7 +21,14 @@ function Footer() {
           <p className="footer-email">contact@globallogistics.com</p>
 
           <div className="footer-socials">
-            <a href="https://instagram.com">Instagram</a>
+            <a
+              href="https://www.instagram.com/kakosdevltd/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="instagram-link"
+            >
+              <FaInstagram  />
+            </a>
             <a href="https://tiktok.com">TikTok</a>
           </div>
         </div>

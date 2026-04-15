@@ -931,7 +931,7 @@ button {
 
 .footer-socials a {
   text-decoration: none;
-  color: #111827;
+
   font-size: 0.9rem;
   position: relative;
   transition: 0.3s;
@@ -1129,7 +1129,6 @@ button {
   font-weight: 200; /* slightly bolder for emphasis */
 }
 
-
 @media (max-width: 900px) {
   .services-container {
     grid-template-columns: 1fr;
@@ -1174,7 +1173,6 @@ button {
   min-width: 0; /* prevents overflow */
 }
 
-
 @media (max-width: 480px) {
   .services-title {
     font-size: 1.6rem;
@@ -1191,4 +1189,23 @@ button {
   .services-description {
     font-size: 0.95rem;
   }
+}
+
+.instagram-link svg {
+  font-size: 28px;
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d,
+    #f56040,
+    #f77737,
+    #fcaf45,
+    #ffdc80
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
