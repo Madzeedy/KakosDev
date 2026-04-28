@@ -8,7 +8,7 @@ import logo from "../assets/K2.png"; // top left logo
 
 const backgrounds = [bgImage, bg1, bg2, bg3, bg4];
 
-function Home() {
+function Home({ setShowQuote }) {
   const [currentBg, setCurrentBg] = useState(0);
 
   useEffect(() => {
@@ -46,7 +46,12 @@ function Home() {
             your cargo with discipline, speed, and zero compromise.
           </p>
 
-          <button className="home-btn minimal">Discuss your project →</button>
+          <button
+            className="home-btn minimal"
+            onClick={() => setShowQuote(true)}
+          >
+            Discuss your project →
+          </button>
         </div>
       </div>
     </section>

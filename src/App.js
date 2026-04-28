@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Header setShowQuote={setShowQuote} />
-      <Home />
+      <Home setShowQuote={setShowQuote} />
       <Services />
       <Contact />
       <Footer />

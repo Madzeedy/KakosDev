@@ -1,5 +1,5 @@
 import React from "react";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaTiktok } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -27,9 +27,16 @@ function Footer() {
               rel="noopener noreferrer"
               className="instagram-link"
             >
-              <FaInstagram  />
+              <FaInstagram />
             </a>
-            <a href="https://tiktok.com">TikTok</a>
+            <a
+              href="https://tiktok.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="tiktok-link"
+            >
+              <FaTiktok />
+            </a>
           </div>
         </div>
       </div>

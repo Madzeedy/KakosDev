@@ -1209,3 +1209,14 @@ button {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.tiktok-link svg {
+  font-size: 28px;
+  color: #000000;
+  filter: drop-shadow(-2px -2px 0 #25f4ee) drop-shadow(2px 2px 0 #fe2c55);
+  transition: transform 0.3s ease;
+}
+
+.tiktok-link svg:hover {
+  transform: scale(1.08);
+}
