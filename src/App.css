@@ -1206,8 +1206,13 @@ button {
     #fcaf45,
     #ffdc80
   );
+  transition: transform 0.3s ease;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.instagram-link svg:hover {
+  transform: scale(1.08);
 }
 
 .tiktok-link svg {

@@ -30,7 +30,7 @@ function Footer() {
               <FaInstagram />
             </a>
             <a
-              href="https://tiktok.com"
+              href="https://www.tiktok.com/@kakosdev"
               target="_blank"
               rel="noopener noreferrer"
               className="tiktok-link"
